@@ -5,13 +5,13 @@ distance = 665
 plane_model = 'Boeing 737'
 
 if distance < 684:
-    table = './regional_tables'
+    table = './regional_tables.csv'
 elif distance <1000:
-    table = './short_tables'
+    table = './short_tables.csv'
 elif distance <3400:
-    table = './medium_tables'
+    table = './medium_tables.csv'
 else:
-    table = './long_tables'
+    table = './long_tables.csv'
 
 # commuter_max = 300
 # regional_min = 500

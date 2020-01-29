@@ -42,6 +42,7 @@ medium_max = 3400
 long_min = 4650
 long_max = 7200
 
+ranges = [commuter_max,regional_max,short_max,medium_max,long_max]
 
 # Carbon output calculation
 def carbon_calc(gpm):
@@ -75,8 +76,31 @@ for i in range(0,len(tables)):
 
 
 # Dataframes to CSVs
-commuter_tables_df.to_csv('commuter_tables',index=False)
-regional_tables_df.to_csv('regional_tables',index=False)
-short_tables_df.to_csv('short_tables',index=False)
-medium_tables_df.to_csv('medium_tables',index=False)
-long_tables_df.to_csv('long_tables',index=False)
+commuter_tables_df.to_csv('commuter_tables.csv',index=False)
+regional_tables_df.to_csv('regional_tables.csv',index=False)
+short_tables_df.to_csv('short_tables.csv',index=False)
+medium_tables_df.to_csv('medium_tables.csv',index=False)
+long_tables_df.to_csv('long_tables.csv',index=False)
+
+print(len(commuter_tables_df)+len(regional_tables_df)+len(short_tables_df)+len(medium_tables_df)+len(long_tables_df))
+
+# for i in range(0,len(tables)):
+#     print('Min:')
+#     print(tables[i]["CO2 per mi per seat"].min())
+#     print('Max:')
+#     print(tables[i]["CO2 per mi per seat"].max())
+
+# Range is 0.18042959328441344 to 0.5412887798532404
+# .036 increments?
+
+
+# Master CSV with added column for max range
+for i in range(0,len(tables)):
+    tables[i]['Max Range'] = ranges[i]
+    if i == 0:
+        master_df = tables[i]
+    else:
+        master_df = master_df.append(tables[i])
+        print('appending')
+
+master_df.to_csv('master.csv',index=False)
