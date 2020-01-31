@@ -10,12 +10,12 @@ from keras.utils import to_categorical
 filename = 'master_scored_ML.csv'
 
 dataframe = read_csv(filename)
-dataframe = dataframe.drop(columns=['Sector','CO2 per mi','CO2 per mi per seat','Score'])
+dataframe = dataframe.drop(columns=['Sector','CO2 per mi','Fuel per seat','Score'])
 
 dataframe['Fuel burn'] = dataframe['Fuel burn'].str.split('k').str[0].astype(float)
-dataframe['Fuel per seat'] = dataframe['Fuel per seat'].str.split('L').str[0].astype(float)
+#dataframe['Fuel per seat'] = dataframe['Fuel per seat'].str.split('L').str[0].astype(float)
 dataframe['Model'] = dataframe['Model'].str.split(' ').str[0]
-dataframe = dataframe[['First flight', 'Fuel burn', 'Max Range', 'Seats', 'Model', 'Fuel per seat']]
+dataframe = dataframe[['First flight', 'Fuel burn', 'Max Range', 'Seats', 'Model', 'CO2 per mi per seat']]
 #dataframe = dataframe[['First flight', 'Max Range', 'Model', 'Fuel per seat']]
 
 # Step 1: Label-encode data set
