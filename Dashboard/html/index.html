@@ -23,7 +23,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Flightprints</a>
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -43,40 +43,52 @@
     </div>
   </nav>
 
-  <header id="intro" class="bg-success text-white">
+<!-- Header section - includes search boxes -->
+
+  <header id="intro" class="text-white bg-success" style="background-image: url(../images/sky.jpg); background-size: cover;">
     <div class="container text-center">
-        <h1>Welcome to Flightprints</h1>
-        <p class="lead"><i>A responsible trip planner</i></p>
+        <h1><b>Welcome to Flightprints</b></h1>
+        <p class="lead"><b>A responsible trip planner</b></p>
         <br>
         <br id="search">
         <h3>Where to?</h3><br>
       <div class = "row" >
-        <div class = "col-4">
+        <div class = "col-3">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing-default ORIG">From</span>
+              <span class="input-group-text" id="inputGroup-sizing-default">From</span>
             </div>
-            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-          </div>
-        </div>
-        <div class = "col-4">
-          <div class="input-group mb-3">
-            <div class="input-group-append">
-              <span class="input-group-text" id="inputGroup-sizing-default DEST">To</span>
-            </div>
-            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <input type="text" class="form-control ORIGIN" aria-label="Default" aria-describedby="inputGroup-sizing-default">
           </div>
         </div>
         <div class = "col-3">
           <div class="input-group mb-3">
             <div class="input-group-append">
-              <span class="input-group-text" id="inputGroup-sizing-default DATE">Date</span>
+              <span class="input-group-text" id="inputGroup-sizing-default">To</span>
             </div>
-            <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <input type="text" class="form-control DESTINATION" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+          </div>
+        </div>
+        <div class = "col-3">
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <span class="input-group-text" id="inputGroup-sizing-default">Depart</span>
+            </div>
+            <input type="date" class="form-control DATE" aria-label="Default" aria-describedby="inputGroup-sizing-default">
         </div>
         </div>
-        <div class = "col-1">
-          <button type="button" class="btn btn-dark">Go!</button>
+        <div class = "col-3">
+          <div class="input-group mb-3">
+            <div class="input-group-append">
+              <span class="input-group-text" id="inputGroup-sizing-default">Return</span>
+            </div>
+            <input type="date" class="form-control DATE" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+        </div>
+      </div>
+      <div class = row>
+        <div class = "col-12">
+          <button type="button" class="btn btn-dark" id="SCRAPE">Go!</button>
         </div>
       </div>
     </div>
@@ -109,13 +121,27 @@
                         <ul class="list-group list-group-flush">
                           <li class="list-group-item"><b>Ticket Price</b></li>
                           <li class="list-group-item">Offset Price</li>
-                          <li class="list-group-item">Score without offset</li>
+                          <li class="list-group-item">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span></li>
                         </ul>
                       </div>
                     </div>
                   </p>
                   <a href="#" class="btn btn-success">Purchase a ticket</a>
                   <a href="#" class="btn btn-success">Offset your carbon</a>
+                  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMap" aria-expanded="false" aria-controls="collapseMap">
+                    See transit options
+                  </button>                  
+                  </p>
+                  <div class="collapse" id="collapseMap">
+                    <div class="card card-body">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6355518.012347918!2d-91.1616135969929!3d38.94042488300022!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8864ec3213eb903d%3A0x7d3fb9d0a1e9daa0!2sNashville%2C%20TN!5e0!3m2!1sen!2sus!4v1580422317680!5m2!1sen!2sus" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -153,7 +179,7 @@
                   <img src="../images/pic6.jpg" class="d-block w-100" alt="slide 3">
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Save the planet!</h5>
-                    <p>... or at least pay to offset the carbon emissions from your flight</p>
+                    <p>... or pay to offset the carbon emissions from your flight</p>
                   </div>
                 </div>
               </div>
@@ -202,14 +228,29 @@
             Est placerat in egestas erat imperdiet. Iaculis at erat pellentesque adipiscing commodo elit at.
           </p>
         </div>
-      </div>
+      </div><br>
+      <div class="row">
+        <div class = "col-12" id="graph1">
+        </div>
+      </div><br>
+      <div class="row">
+        <div class = "col-6" id="graph2">
+        </div>
+      </div><br>
+      <div class="row">
+        <div class = "col-6" id="graph3">
+        </div>
+      </div><br>
+
+
+
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="py-5 bg-dark">
     <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
+      <p class="m-0 text-center text-white">Created by Greg Wathen, Rachel-Chloe Gregory, and Emily Goldner</p>
     </div>
   <!-- /.container -->
   </footer>
@@ -223,6 +264,15 @@
 
   <!-- Custom JavaScript for this theme -->
   <script src="../js/scrolling-nav.js"></script>
+
+  <!-- Javascript for graphs & charts-->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
+  <script src="../js/app.js"></script>
+
+  <!-- Icon library for star rating system-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 
 </body>
 
