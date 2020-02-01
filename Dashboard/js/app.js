@@ -104,9 +104,9 @@ function chart1(csv){
   var axisLabelY = chartHeight / 2;
 
   chartGroup.append("g")
+    .attr("class", "label")
     .attr('transform', 'translate(' + axisLabelX + ', ' + axisLabelY + ')')
     .append("text")
-    .classed("label")
     .attr('text-anchor', 'middle')
     .attr("transform", "rotate(-90)")
     .text("Lbs of C02 emitted per mile per seat");
