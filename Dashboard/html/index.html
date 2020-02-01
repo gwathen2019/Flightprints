@@ -43,7 +43,7 @@
     </div>
   </nav>
 
-<!-- Header section - includes search boxes -->
+<!-- Header section -->
 
   <header id="intro" class="text-white bg-success" style="background-image: url(../images/sky.jpg); background-size: cover;">
     <div class="container text-center">
@@ -52,39 +52,44 @@
         <br>
         <br id="search">
         <h3>Where to?</h3><br>
-      <div class = "row" >
-        <div class = "col-4">
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <span class="input-group-text" id="inputGroup-sizing-default">From</span>
-            </div>
-            <input type="text" class="form-control ORIGIN" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+
+<!-- Search Section-->
+  <form action="" method="post">
+    <div class = "row" >
+      <div class = "col-4">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">From</span>
           </div>
-        </div>
-        <div class = "col-4">
-          <div class="input-group mb-3">
-            <div class="input-group-append">
-              <span class="input-group-text" id="inputGroup-sizing-default">To</span>
-            </div>
-            <input type="text" class="form-control DESTINATION" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-          </div>
-        </div>
-        <div class = "col-4">
-          <div class="input-group mb-3">
-            <div class="input-group-append">
-              <span class="input-group-text" id="inputGroup-sizing-default">Date</span>
-            </div>
-            <input type="date" class="form-control DATE" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-        </div>
+          <input type="text" class="form-control ORIGIN" aria-label="Default" aria-describedby="inputGroup-sizing-default">
         </div>
       </div>
-      <div class = row>
-        <div class = "col-12">
-          <button type="button" class="btn btn-dark" id="SCRAPE">Go!</button>
+      <div class = "col-4">
+        <div class="input-group mb-3">
+          <div class="input-group-append">
+            <span class="input-group-text" id="inputGroup-sizing-default">To</span>
+          </div>
+          <input type="text" class="form-control DESTINATION" aria-label="Default" aria-describedby="inputGroup-sizing-default">
         </div>
+      </div>
+      <div class = "col-4">
+        <div class="input-group mb-3">
+          <div class="input-group-append">
+            <span class="input-group-text" id="inputGroup-sizing-default">Date</span>
+          </div>
+          <input type="date" class="form-control DATE" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      </div>
       </div>
     </div>
+    <div class = row>
+      <div class = "col-12">
+        <button type="submit" class="btn btn-dark" id="SCRAPE">Go!</button>
+      </div>
+    </div>
+  </form>
   </header>
+
+  <!-- Results Section -->
 
   <section id="results">
     <div class="container">
@@ -117,10 +122,10 @@
               <span class="fa fa-star checked"></span>
               <span class="fa fa-star checked"></span>
               <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span></li><br>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
               <span class="fa fa-star"></span>
               <span class="fa fa-star"></span></li>
           </ul>
