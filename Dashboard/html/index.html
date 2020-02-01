@@ -53,7 +53,7 @@
         <br id="search">
         <h3>Where to?</h3><br>
       <div class = "row" >
-        <div class = "col-3">
+        <div class = "col-4">
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="inputGroup-sizing-default">From</span>
@@ -61,7 +61,7 @@
             <input type="text" class="form-control ORIGIN" aria-label="Default" aria-describedby="inputGroup-sizing-default">
           </div>
         </div>
-        <div class = "col-3">
+        <div class = "col-4">
           <div class="input-group mb-3">
             <div class="input-group-append">
               <span class="input-group-text" id="inputGroup-sizing-default">To</span>
@@ -69,20 +69,12 @@
             <input type="text" class="form-control DESTINATION" aria-label="Default" aria-describedby="inputGroup-sizing-default">
           </div>
         </div>
-        <div class = "col-3">
+        <div class = "col-4">
           <div class="input-group mb-3">
             <div class="input-group-append">
-              <span class="input-group-text" id="inputGroup-sizing-default">Depart</span>
+              <span class="input-group-text" id="inputGroup-sizing-default">Date</span>
             </div>
-            <input type="date" class="form-control DATE1" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-        </div>
-        </div>
-        <div class = "col-3">
-          <div class="input-group mb-3">
-            <div class="input-group-append">
-              <span class="input-group-text" id="inputGroup-sizing-default">Return</span>
-            </div>
-            <input type="date" class="form-control DATE2" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            <input type="date" class="form-control DATE" aria-label="Default" aria-describedby="inputGroup-sizing-default">
         </div>
         </div>
       </div>
@@ -97,54 +89,58 @@
   <section id="results">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12 mx-auto">
-          <h2 id="results-here">Results</h2>
+        <div class="col-lg-12 mx-auto" id="results-here">
 
-<!-- Sample Card - Generate results using this template -->
+<!-- Results will genererate here -->
 
-              <div class="card">
-                <div class="card-body">
-                  <h3 class="card-title">Time of Flight</h3>
-                  <p class="card-text">
-                    <div class = "row">
-                      <div class = "col-2">
-                        <img src="../images/logo_placeholder.jpg" alt="logo" class="img-thumbnail">
-                      </div>
-                      <div class = "col-6">
-                        <ul class="list-group list-group-flush">
-                          <li class="list-group-item">Total Flight Time</li>
-                          <li class="list-group-item">Airline</li>
-                          <li class="list-group-item">Fare Class</li>
-                        </ul>
-                      </div>
-                      <div class = "col-4">
-                        <ul class="list-group list-group-flush">
-                          <li class="list-group-item"><b>Ticket Price</b></li>
-                          <li class="list-group-item">Offset Price</li>
-                          <li class="list-group-item">
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </p>
-                  <a href="#" class="btn btn-success">Purchase a ticket</a>
-                  <a href="#" class="btn btn-success">Offset your carbon</a>
-                  <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMap" aria-expanded="false" aria-controls="collapseMap">
-                    See transit options
-                  </button>                  
-                  </p>
-                  <div class="collapse" id="collapseMap">
-                    <div class="card card-body">
-                      <iframe src=“https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d12870994.752233693!2d-89.22135968495628!3d38.03933342095334!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e4!4m5!1s0x89c26650d5404947%3A0xec4fb213489f11f0!2sJohn%20F.%20Kennedy%20International%20Airport%2C%20Queens%2C%20NY%2011430!3m2!1d40.641311099999996!2d-73.77813909999999!4m5!1s0x88646eab541f3d59%3A0xaaf78a5d943ea27b!2sNashville%20International%20Airport%20(BNA)%2C%201%20Terminal%20Dr%2C%20Nashville%2C%20TN%2037214!3m2!1d36.126317!2d-86.67737129999999!5e0!3m2!1sen!2sus!4v1580439366463!5m2!1sen!2sus” width=“600" height=“450” frameborder=“0" style=“border:0;” allowfullscreen=“”></iframe>                    </div>
-                  </div>
-                </div>
-              </div>
+<div class="card">
+  <div class="card-body">
+    <h3 class="card-title">Time of Flight</h3>
+    <p class="card-text">
+      <div class = "row">
+        <div class = "col-2">
+          <img src="../images/logo_placeholder.jpg" alt="logo" class="img-thumbnail">
+        </div>
+        <div class = "col-6">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Total Flight Time</li>
+            <li class="list-group-item">Airline</li>
+            <li class="list-group-item">Fare Class</li>
+          </ul>
+        </div>
+        <div class = "col-4">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><b>Ticket Price</b></li>
+            <li class="list-group-item">Offset Price</li>
+            <li class="list-group-item">
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span></li><br>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span></li>
+          </ul>
+        </div>
+      </div>
+    </p>
+    <a href="#" class="btn btn-success">Purchase a ticket</a>
+    <a href="#" class="btn btn-success">Offset your carbon</a>
+    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMap" aria-expanded="false" aria-controls="collapseMap">
+      See transit options
+    </button>                  
+    </p>
+    <div class="collapse" id="collapseMap">
+      <div class="card card-body">
+        <iframe src="..."></iframe></div>
+    </div>
+  </div>
+  </div>
+  
 
-<!-- End Sample Card-->
 
         </div>
       </div>
@@ -266,8 +262,8 @@
         </div>
         <div class = "col-6">
           <ul>
-            <li><a href="..." class = "link">...</a></li>
-            <li><a href="..." class = "link">...</a></li>
+            <li><a href="https://www.terrapass.com/product/productindividuals-families" class = "link">Terrapass - Offset Emissions</a></li>
+            <li><a href="https://blueskymodel.org/air-mile" class = "link">BlueSkyModel - Calculate Emissions by Fuel Efficiency</a></li>
             <li><a href="..." class = "link">...</a></li>
             <li><a href="..." class = "link">...</a></li>
             <li><a href="..." class = "link">...</a></li>
@@ -306,6 +302,8 @@
   <!-- Icon library for star rating system-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+  <!-- Python script for scraping-->
+  <script src="../../Expedia_scrape/expedia_scraper_master_windows.py"></script>
 
 </body>
 
