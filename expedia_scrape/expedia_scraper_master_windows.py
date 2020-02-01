@@ -7,7 +7,7 @@ def scrape():
     import requests
 
     try:
-        browser = webdriver.Chrome('chromedriver.exe')
+        browser = webdriver.Chrome('c:/Users/chromedriver.exe')
 
         date = '03/27/2020'
         start = 'BNA'
@@ -32,7 +32,7 @@ def scrape():
 
         for i in range(1,6):
             dropdown_element = browser.find_elements_by_xpath('/html/body/div[2]/div[8]/section/div/div[10]/ul/li['+str(i)+']/div[1]/div[2]/span[1]/a/span[4]')[0]
-            browser.execute_script("arguments[0].click();", dropdown_element)
+            dropdown_element.click()
             model_element = browser.find_elements_by_xpath('/html/body/div[2]/div[8]/section/div/div[10]/ul/li['+str(i)+']/div[1]/div[3]/div[2]/div/section/div/div[1]/ul/li[5]')[0]
             model.append(model_element.text) 
             airline_id_element = browser.find_elements_by_xpath('/html/body/div[2]/div[8]/section/div/div[10]/ul/li['+str(i)+']/div[1]/div[1]/div[1]/div/div/div/div[1]/div[2]/span')[0]
