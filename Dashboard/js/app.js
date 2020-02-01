@@ -1,14 +1,11 @@
 // GENERATE RESULTS //
 
-var scrapeFunction = "../../Expedia_scrape/expedia_scraper_master_windows.py"
+function results(){
+  d3.select("#results-here")
+    .html(`<div class = 'row'>{{ model }}</div>`)
+}
 
-
-
-var scrapeResults = []
-
-
-
-
+results()
 
 // GENERATE CHARTS //
 
