@@ -12,7 +12,21 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     output = scrape()
+<<<<<<< HEAD
 
+=======
+    model = output['model']
+    airline = output['airline']
+    depart = output['depart']
+    arrive = output['arrive']
+    duration = output['duration']
+    no_stops = output['no_stops']
+    price = output['price']
+    layover = output['layover']
+    depart_apt = output['depart_apt']
+    arrive_apt = output['arrive_apt']
+    layover_apt = output['layover_apt']
+>>>>>>> rachel
     return render_template('index.html', model=model,airline=airline,depart=depart,arrive=arrive,duration=duration,no_stops=no_stops,price=price,layover=layover,depart_apt=depart_apt,arrive_apt=arrive_apt,layover_apt=layover_apt)
 
 
