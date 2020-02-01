@@ -7,7 +7,7 @@ def scrape():
     import requests
 
     try:
-        browser = webdriver.Chrome('c:/Users/chromedriver.exe')
+        browser = webdriver.Chrome('chromedriver.exe')
 
         date = '03/27/2020'
         start = 'BNA'
