@@ -25,20 +25,29 @@ hr.special-hr {
   font-size: medium;
 }
 
+.link{
+  color: white;
+  font-family: sans-serif;
+  font-size: medium;
+}
+
+.link:hover{
+  color:  rgb(88, 165, 196);
+}
+
 .bar{
-  fill: darkolivegreen;
+  fill:  rgb(42, 79, 94);
 }
 
 .bar:hover{
-  fill: rgb(156, 196, 88);
+  fill:  rgb(88, 165, 196);
 }
 
 .d3-tip {
   line-height: 1;
   padding: 7px;
-  background: rgb(156, 196, 88, .7);
+  background: rgb(88, 165, 196, .7);
   font-family: sans-serif;
-  border-radius: 8px;
   text-align: center;
   color: white;
 }
@@ -69,7 +78,7 @@ hr {
 }  
 
 .options {
-  background: rgb(156, 196, 88);
+  background: rgb(88, 165, 196);
 }
 
 .select {
@@ -96,4 +105,8 @@ hr {
   font-weight:normal;
   background-color: white;
   color: black;
+}
+
+.label {
+  fill: white;
 }
