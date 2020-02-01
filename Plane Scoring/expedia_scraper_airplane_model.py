@@ -65,4 +65,8 @@ def scrape():
     # browser.quit()
     # return(results_dict)
 
+
+import os 
+import sys
+
 scrape()
