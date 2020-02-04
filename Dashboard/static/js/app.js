@@ -1,11 +1,11 @@
 // GENERATE RESULTS //
 
-function results(){
-  d3.select("#results-here")
-    .html(`<div class = 'row'>{{ model }}</div>`)
-}
+// function results(){
+//   d3.select("#results-here")
+//     .html(`<div class = 'row'>{{ info.model }}</div>`)
+// }
 
-results()
+//results()
 
 // GENERATE CHARTS //
 
@@ -24,9 +24,10 @@ var chartWidth1 = svgWidth1 - chartMargin.left - chartMargin.right;
 var chartWidth2 = svgWidth2 - chartMargin.left - chartMargin.right;
 var chartHeight = svgHeight - chartMargin.top - chartMargin.bottom;
 
-var fp1 = '../data/short_tables.csv'
-var fp2 = '../data/medium_tables.csv'
-var fp3 = '../data/long_tables.csv'
+//app.use('/data', express.static(__dirname + '/static'));
+var fp1 = 'static/data/short_tables.csv'
+var fp2 = 'static/data/medium_tables.csv'
+var fp3 = 'static/data/long_tables.csv'
 
 var tip = d3.tip()
 .attr('class', 'd3-tip')
