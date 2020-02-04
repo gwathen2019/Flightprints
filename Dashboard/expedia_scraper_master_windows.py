@@ -1,7 +1,8 @@
 def scrape(start, end, date):
+#def scrape():
     from splinter import Browser
     from selenium import webdriver
-    import selenium.webdriver.support.ui as ui
+    #import selenium.webdriver.support.ui as ui
     from bs4 import BeautifulSoup
     import pandas as pd
     import numpy as np
@@ -11,10 +12,10 @@ def scrape(start, end, date):
     try:
         #browser = webdriver.Chrome('chromedriver.exe')
         browser = webdriver.Chrome(executable_path='/usr/local/bin/chromedriver')
-        wait = ui.WebDriverWait(browser,10)
-        # date = '03/27/2020'
-        # start = 'BNA'
-        # end = 'JFK'
+        #wait = ui.WebDriverWait(browser,10)
+        date = '03/27/2020'
+        start = 'BNA'
+        end = 'JFK'
 
         url_expedia = 'https://www.expedia.com/Flights-Search?flight-type=on&starDate='+date+'&mode=search&trip=oneway&leg1=from:'+start+',to:'+end+',departure:'+date+'TANYT&passengers=adults:1,children:0,seniors:0,infantinlap:Y'
 
@@ -52,8 +53,8 @@ def scrape(start, end, date):
             depart_arrival.append(depart_arrival_apt_element.text)
             price_element = browser.find_elements_by_xpath('/html/body/div[2]/div[8]/section/div/div[10]/ul/li['+str(i)+']/div[1]/div[1]/div[2]/div/div[1]/div[1]/span')[0]
             price.append(price_element.text)
-            print(price)
-            sleep(1)
+            print(i)
+            #sleep(1)
 
         for i in range(0,len(model)):
             item = model[i].split(" |")
@@ -71,7 +72,7 @@ def scrape(start, end, date):
                 depart_apt.append(item[1].split(' ')[0])
                 layover_apt.append('none')
                 arrive_apt.append(item[-1].split(' ')[-1])
-
+        print('making dict')
         results_dict={}
         results_dict['model']=model
         results_dict['airline']=airline
