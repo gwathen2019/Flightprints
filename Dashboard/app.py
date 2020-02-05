@@ -103,7 +103,7 @@ def get_score():
     results_dict = {}
     #info = db.flights.find()[1]
     for i in range(0,len(flight_info['model'])):
-        # try:
+        try:
         
             dist = dist_info['flight_distance'][i]
             name = flight_info['model'][i]
@@ -119,8 +119,16 @@ def get_score():
             offset = round((dist*co2_mi_seat)/1000,2)
             offsets.append(offset)
 
-        # except(ValueError):
-        #     pass
+        except(ValueError):
+            dist = dist_info['flight_distance'][i]
+            model = flight_info['model'][i]
+            co2_mi_seat = 0.220206117258477
+            cos.append(co2_mi_seat)
+            score = round(8.322955080213202,2)
+            scores.append(score)
+            offset = round((dist*co2_mi_seat)/1000,2)
+            offsets.append(offset)
+            pass
     results_dict['score'] = scores
     results_dict['co2_mi_seat']=cos
     results_dict['offset'] = offsets
