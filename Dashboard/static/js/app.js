@@ -1,11 +1,5 @@
 // GENERATE RESULTS //
 
-function results(){
-  d3.select("#results-here")
-    .html(`<div class = 'row'><script>{{ info.model[0] }}</script></div>`)
-}
-
-results()
 
 // GENERATE CHARTS //
 

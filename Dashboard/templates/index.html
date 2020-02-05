@@ -98,52 +98,49 @@
 
 <!-- Results will generate here -->
 
-<div class="card">
-  <div class="card-body">
-    <h3 class="card-title">Time of Flight</h3>
-    <p class="card-text">
-      <div class = "row">
-        <div class = "col-2">
-          <img src="static/images/logo_placeholder.jpg" alt="logo" class="img-thumbnail">
-        </div>
-        <div class = "col-6">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">Total Flight Time</li>
-            <li class="list-group-item">Airline</li>
-            <li class="list-group-item">Fare Class</li>
-          </ul>
-        </div>
-        <div class = "col-4">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item"><b>Ticket Price</b></li>
-            <li class="list-group-item">Offset Price</li>
-            <li class="list-group-item">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span></li>
-          </ul>
-        </div>
-      </div>
-    </p>
-    <a href="#" class="btn btn-success">Purchase a ticket</a>
-    <a href="#" class="btn btn-success">Offset your carbon</a>
-    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMap" aria-expanded="false" aria-controls="collapseMap">
-      See transit options
-    </button>                  
-    </p>
-    <div class="collapse" id="collapseMap">
-      <div class="card card-body">
-        <iframe src="..."></iframe></div>
-    </div>
-  </div>
-  </div>
+        <!-- 1 -->
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">JetBlue Airways 11:00am - 
+              JFK 6:29pm</h3>
+            <p class="card-text">
+              <div class = "row">
+                <div class = "col-2">
+                  <img src="static/images/logo_placeholder.jpg" alt="logo" class="img-thumbnail">
+                </div>
+                <div class = "col-6">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Airline: JetBlue Airways</li>
+                    <li class="list-group-item">Plane: Airbus A320</li>
+                    <li class="list-group-item">Flight Time: 6h 29m</li>
+                  </ul>
+                </div>
+                <div class = "col-4">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><b>Ticket Price: $105</b></li>
+                    <li class="list-group-item">CO2: 0.21 1000 lbs</li>
+                    <li class="list-group-item">Eco-Score: 8.44</li>
+                  </ul>
+                </div>
+              </div>
+            </p>
+            <a href="" class="btn btn-success">Purchase a ticket</a>
+            <a href="https://www.terrapass.com/product/productindividuals-families?weight_needed=0.21" class="btn btn-success">Offset your carbon</a>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMap" aria-expanded="false" aria-controls="collapseMap">
+              See transit options
+            </button>                  
+            </p>
+            <div class="collapse" id="collapseMap">
+              <div class="card card-body">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3222.6527430020606!2d-86.67955998549627!3d36.126316980092945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88646eab541f3d59%3A0xaaf78a5d943ea27b!2sBNA!5e0!3m2!1sen!2sus!4v1580855090339!5m2!1sen!2sus" 
+                width="930" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+          </div>
+          </div>
+          <br>
+
+        
+
   
 
 
@@ -162,21 +159,21 @@
             <div id="carouselExampleControls" class="carousel slide carousel-fade" data-ride="carousel">
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="static/images/pic4.jpg" class="d-block w-100" alt="slide 1">
+                  <img src="{{ url_for('.static', filename='images/pic4.jpg') }}" class="d-block w-100" alt="slide 1">
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Search for a flight</h5>
                     <p>The search engine returns the latest ticket prices and iteneraries</p>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img src="static/images/pic5.jpg" class="d-block w-100" alt="slide 2">
+                  <img src="{{ url_for('.static', filename='images/pic5.jpg') }}" class="d-block w-100" alt="slide 2">
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Learn your score</h5>
                     <p>Our machine-learning algorithm generates a 1-5 star rating of each flight's emissions levels</p>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img src="static/images/pic6.jpg" class="d-block w-100" alt="slide 3">
+                  <img src="{{ url_for('.static', filename='images/pic6.jpg') }}" class="d-block w-100" alt="slide 3">
                   <div class="carousel-caption d-none d-md-block">
                     <h5>Save the planet!</h5>
                     <p>... or pay to offset the carbon emissions from your flight</p>
@@ -197,13 +194,13 @@
       </div><br>
       <div class="row">
         <div class="col-4">
-          <img src="static/images/pic3.jpg" class="img-fluid" alt="...">
+          <img src="{{ url_for('.static', filename='images/pic3.jpg') }}" class="img-fluid" alt="...">
         </div>
         <div class="col-4">
-          <img src="static/images/pic2.jpg" class="img-fluid" alt="...">
+          <img src="{{ url_for('.static', filename='images/pic2.jpg') }}" class="img-fluid" alt="...">
         </div>
         <div class="col-4">
-          <img src="static/images/pic1.jpg" class="img-fluid" alt="...">
+          <img src="{{ url_for('.static', filename='images/pic1.jpg') }}" class="img-fluid" alt="...">
         </div>
       </div><br>
       <div class="row">
@@ -220,7 +217,7 @@
         </div>
         <div class="col-4">
           <p>The global online travel market was valued at $570.25 billion in 2017.
-            By 2023, it could touch a valuation of $1,134.55 billion.
+            By 2023, it could be valued at up to $1,134.55 billion.
             <br><br>
             By offering sustainable options, an environmentally responsible company
             could stand to gain a much greater market share.
@@ -258,20 +255,20 @@
       <div class = "row">
         <div class = "col-6">
           <ul>
-            <li><a href="https://ttra.com/wp-content/uploads/2018/11/Ecotourism-Outlook-2018.pdf" class = "link">TTRA Ecotourism Outlook 2018</a></li>
-            <li><a href="https://globalnews.booking.com/bookingcom-reveals-key-findings-from-its-2019-sustainable-travel-report/" class = "link">Booking.com - 2019 Sustainable Travel Report</a></li>
-            <li><a href="https://en.wikipedia.org/wiki/Fuel_economy_in_aircraft#Example_values" class = "link">Wikipedia - Fuel Economy in Aircraft</a></li>
-            <li><a href="https://www.myclimate.org/fileadmin/user_upload/myclimate_-_home/01_Information/01_About_myclimate/09_Calculation_principles/Documents/myclimate-flight-calculator-documentation_EN.pdf" class = "link">Myclimate.org - Flight Calculator Documentation</a></li>
-            <li><a href="https://www.marketwatch.com/press-release/online-travel-market-2019---2023-business-trends-segments-size-share-industry-profit-growth-regional-study-and-emerging-technologies---17-sep-2019-2019-09-17" class = "link">Market Watch - Global Travel Market</a></li>
+            <li><a target = "_blank" href="https://ttra.com/wp-content/uploads/2018/11/Ecotourism-Outlook-2018.pdf" class = "link">TTRA Ecotourism Outlook 2018</a></li>
+            <li><a target = "_blank" href="https://globalnews.booking.com/bookingcom-reveals-key-findings-from-its-2019-sustainable-travel-report/" class = "link">Booking.com - 2019 Sustainable Travel Report</a></li>
+            <li><a target = "_blank" href="https://en.wikipedia.org/wiki/Fuel_economy_in_aircraft#Example_values" class = "link">Wikipedia - Fuel Economy in Aircraft</a></li>
+            <li><a target = "_blank" href="https://www.myclimate.org/fileadmin/user_upload/myclimate_-_home/01_Information/01_About_myclimate/09_Calculation_principles/Documents/myclimate-flight-calculator-documentation_EN.pdf" class = "link">Myclimate.org - Flight Calculator Documentation</a></li>
+            <li><a target = "_blank" href="https://www.marketwatch.com/press-release/online-travel-market-2019---2023-business-trends-segments-size-share-industry-profit-growth-regional-study-and-emerging-technologies---17-sep-2019-2019-09-17" class = "link">Market Watch - Global Travel Market</a></li>
           </ul>
         </div>
         <div class = "col-6">
           <ul>
-            <li><a href="https://www.terrapass.com/product/productindividuals-families" class = "link">Terrapass - Offset Emissions</a></li>
-            <li><a href="https://blueskymodel.org/air-mile" class = "link">BlueSkyModel - Calculate Emissions by Fuel Efficiency</a></li>
-            <li><a href="..." class = "link">...</a></li>
-            <li><a href="..." class = "link">...</a></li>
-            <li><a href="..." class = "link">...</a></li>
+            <li><a target = "_blank" href="https://www.terrapass.com/product/productindividuals-families" class = "link">Terrapass - Offset Emissions</a></li>
+            <li><a target = "_blank" href="https://blueskymodel.org/air-mile" class = "link">BlueSkyModel - Calculate Emissions by Fuel Efficiency</a></li>
+            <li><a target = "_blank" href="https://ww3.arb.ca.gov/cc/capandtrade/capandtrade.htm" class = "link">Cap & Trade - California Air Resources Board</a></li>
+            <li><a target = "_blank" href="https://americancarbonregistry.org/" class = "link">American Carbon Registry</a></li>
+            <li><a target = "_blank" href="https://verra.org/" class = "link">Verra.org</a></li>
           </ul>
         </div>
       </div>
@@ -290,25 +287,22 @@
   </footer>
 
   <!-- Bootstrap core JavaScript -->
-  <script src="{{url_for('static',filename='vendor/jquery/jquery.min.js')}}"></script>
-  <script src="{{url_for('static',filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script type="text/javascript" src="{{ url_for('.static', filename='vendor/jquery/jquery.min.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('.static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
   <!-- Plugin JavaScript -->
-  <script src="{{url_for('static',filename='vendor/jquery-easing/jquery.easing.min.js')}}"></script>
+  <script type="text/javascript" src="{{ url_for('.static', filename='vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
   <!-- Custom JavaScript for this theme -->
-  <script src="{{url_for('static',filename='js/scrolling-nav.js')}}"></script>
+  <script type="text/javascript" src="{{ url_for('.static', filename='js/scrolling-nav.js') }}"></script>
 
   <!-- Javascript for graphs & charts-->
-  <script src="https://d3js.org/d3.v5.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js"></script>
-  <script src="{{url_for('static',filename='js/app.js')}}"></script>
+  <script src= 'https://d3js.org/d3.v5.min.js'></script>
+  <script src= 'https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.7.1/d3-tip.min.js'></script>
+  <script type="text/javascript" src="{{ url_for('.static', filename='js/app.js') }}"></script>
 
   <!-- Icon library for star rating system-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <!-- Python script for scraping-->
-  <!-- <script src="./expedia_scraper_master_windows.py"></script> -->
+  <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
 
 </body>
 
