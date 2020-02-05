@@ -11,7 +11,7 @@ def scrape(start, end, date):
 
     try:
         #browser = webdriver.Chrome('chromedriver.exe')
-        browser = webdriver.Chrome(executable_path='/usr/local/bin/chromedriver')
+        browser = webdriver.Chrome(executable_path='chromedriver.exe')
         #wait = ui.WebDriverWait(browser,10)
         date = '03/27/2020'
         start = 'BNA'
