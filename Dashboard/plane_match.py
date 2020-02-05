@@ -40,7 +40,7 @@ def match_plane(distance,plane_model):
         name1 = row['model']
         return fuzz.token_set_ratio(name, name1)
 
-    if len(df) !=  0:
+    if matched_df.empty():
         matched_df['Fuzz Score'] = matched_df.apply(get_ratio, axis=1)
 
         closest_match = matched_df[matched_df['Fuzz Score']==matched_df['Fuzz Score'].max()]
