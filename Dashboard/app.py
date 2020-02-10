@@ -33,7 +33,7 @@ def index():
     if info.count() == 0:       
         return render_template('index.html')
     else:
-        return render_template('index.html',info=info[0])
+        return render_template('index.html',info=info[0], score=info[2], offset=info[3])
 
 
 @app.route("/scrape",methods=['GET', 'POST'])
