@@ -33,7 +33,8 @@ def index():
     if info.count() == 0:       
         return render_template('index.html')
     else:
-        return render_template('index.html',info=info[0], score=info[2], offset=info[2])
+        return render_template('index.html',info=info[0], score=info[2])
+        #return render_template('index.html',info=info)
 
 
 @app.route("/scrape",methods=['GET', 'POST'])
@@ -100,6 +101,7 @@ def get_score():
     scores = []
     cos = []
     offsets = []
+    paid_offsets = []
     results_dict = {}
     #info = db.flights.find()[1]
     for i in range(0,len(flight_info['model'])):
@@ -116,8 +118,10 @@ def get_score():
             scores.append(score)
             co2_mi_seat = score_co[1]
             cos.append(co2_mi_seat)
-            offset = round((dist*co2_mi_seat)/1000,2)
+            offset = round((dist*co2_mi_seat),2)
             offsets.append(offset)
+            paid_offset = round((dist*co2_mi_seat)/1000,2)
+            paid_offsets.append(paid_offset)
 
         except(ValueError):
             dist = dist_info['flight_distance'][i]
@@ -126,12 +130,15 @@ def get_score():
             cos.append(co2_mi_seat)
             score = round(8.322955080213202,2)
             scores.append(score)
-            offset = round((dist*co2_mi_seat)/1000,2)
+            offset = round((dist*co2_mi_seat),2)
             offsets.append(offset)
+            paid_offset = round((dist*co2_mi_seat)/1000,2)
+            paid_offsets.append(paid_offset)
             pass
     results_dict['score'] = scores
     results_dict['co2_mi_seat']=cos
     results_dict['offset'] = offsets
+    results_dict['paid_offset'] = paid_offsets
     collection.insert(results_dict)    
     return redirect("/")
 

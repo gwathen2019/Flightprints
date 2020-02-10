@@ -13,9 +13,9 @@ def scrape(start, end, date):
         #browser = webdriver.Chrome('chromedriver.exe')
         browser = webdriver.Chrome(executable_path='/usr/local/bin/chromedriver')
         #wait = ui.WebDriverWait(browser,10)
-        date = '03/27/2020'
-        start = 'BNA'
-        end = 'JFK'
+        # date = '03/27/2020'
+        # start = 'BNA'
+        # end = 'JFK'
 
         url_expedia = 'https://www.expedia.com/Flights-Search?flight-type=on&starDate='+date+'&mode=search&trip=oneway&leg1=from:'+start+',to:'+end+',departure:'+date+'TANYT&passengers=adults:1,children:0,seniors:0,infantinlap:Y'
 
@@ -51,7 +51,8 @@ def scrape(start, end, date):
             no_stops.append(no_stops_element.text)
             depart_arrival_apt_element = browser.find_elements_by_xpath('/html/body/div[2]/div[8]/section/div/div[10]/ul/li['+str(i)+']/div[1]/div[1]/div[1]/div/div/div/div[2]/div[2]')[0]
             depart_arrival.append(depart_arrival_apt_element.text)
-            price_element = browser.find_elements_by_xpath('/html/body/div[2]/div[8]/section/div/div[10]/ul/li['+str(i)+']/div[1]/div[1]/div[2]/div/div[1]/div[1]/span')[0]
+            price_element = browser.find_elements_by_xpath('/html/body/div[2]/div[8]/section/div/div[10]/ul/li['+str(i)+']/div[1]/div[1]/div[2]/div/div[1]/div[1]/span')[-1]
+            print(price_element.text)
             price.append(price_element.text)
             print(i)
             #sleep(1)
@@ -72,6 +73,11 @@ def scrape(start, end, date):
                 depart_apt.append(item[1].split(' ')[0])
                 layover_apt.append('none')
                 arrive_apt.append(item[-1].split(' ')[-1])
+
+        # for i in range(0,len(price)):
+        #     item = price[i].split(' ')[-1]
+        #     price[i] = item[0]
+
         print('making dict')
         results_dict={}
         results_dict['model']=model
