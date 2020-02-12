@@ -22,7 +22,7 @@ def distance_finder(stops):
         dist = dist_txt.split()
         dist_list = [dist[0]]
         #print(dist_list)
-        distance = int(dist_list[0])
+        distance = int(dist_list[0].replace(',',''))
     else:
         for i in range(0,len(stops)):
             if i == 0:
@@ -38,7 +38,7 @@ def distance_finder(stops):
         for i in range(1,len(stops)):
             dist_txt = str(tables[1]['Distance'][i])
             dist = dist_txt.split()
-            dist_list.append(int(dist[0]))
+            dist_list.append(int(dist[0].replace(',','')))
         #print(dist_list)
         distance = sum(dist_list)
 

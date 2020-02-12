@@ -30,7 +30,7 @@ db.flights.drop()
 def index():
     info = db.flights.find()
     print(info.count())
-    if info.count() == 0:       
+    if info.count() == 0:  
         return render_template('index.html')
     else:
         return render_template('index.html',info=info[0], score=info[2])
@@ -49,29 +49,54 @@ def scrape_data():
         date = request.form['date']
 
         date = datetime.datetime.strptime(date, '%Y-%m-%d').strftime('%m/%d/%y')
-
-        output = scrape(origin,destination,date)
-        #output = scrape()
-        # while output is None:
-        #     print('passing')
-        #     sleep(5)
-        #     pass
-        # Add scrape data to mongo
-        collection.update({},output,upsert=True)
-        circle_distance()
-        get_score()
+        #try:
+            #output = scrape(origin,destination,date)
+        info = db.flights.find()
+        while info.count() == 0:
+            try:
+                output = scrape(origin,destination,date)                
+                collection.update({},output,upsert=True)
+                info = db.flights.find()
+            except:
+                pass
+        info = db.flights.find()
+        while info.count() < 2:
+            try:
+                print(info.count())
+                print("running circle dist")
+                circle_distance()
+                print("running score")
+                get_score()
+                info = db.flights.find()
+            except:
+                pass
+            #output = scrape()
+            # while output is None:
+            #     print('passing')
+            #     sleep(5)
+            #     pass
+            # Add scrape data to mongo
+            #collection.update({},output,upsert=True)
+            # circle_distance()
+            # get_score()
+        #except:
+         #   pass
         # Generate just a boring response
         #return 'The origin is %s' % (origin) 
         return redirect("/")
     else:
-        output = scrape('BNA','BOS','03/01/2020')
-        collection.update({},output,upsert=True)
-        circle_distance()
-        get_score()
+        try:
+            output = scrape('BNA','BOS','03/01/2020')
+            collection.update({},output,upsert=True)
+            circle_distance()
+            get_score()
+        except:
+            pass
         return redirect("/")
 
 @app.route("/distance",methods=['GET', 'POST'])
 def circle_distance():
+    print("in circle dist")
     info = db.flights.find()[0]
     routes = []
     #print(info['depart_airport'])

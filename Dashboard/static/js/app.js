@@ -1,6 +1,5 @@
 // GENERATE RESULTS //
 
-
 // GENERATE CHARTS //
 
 var svgWidth1 = 1000;

@@ -90,14 +90,16 @@
   </header>
 
   <!-- Results Section -->
-
-  <section id="results">
+  {% if info is defined %}
+  <section id="results" >
     <div class="container">
       <div class="row">
         <div class="col-lg-12 mx-auto" id="results-here">
+        {{ info }}
 
 <!-- Results will generate here -->
         <!-- 1 -->
+        
         <div class="card">
           <div class="card-body">
             <h3 class="card-title">{{ info.depart_airport[0]}} {{ info.depart_time[0] }} - 
@@ -137,136 +139,16 @@
           </div>
           </div>
           <br>
-        <!-- 1 -->
-        <div class="card">
-          <div class="card-body">
-            <h3 class="card-title">JetBlue Airways BNA 11:00am - 
-              JFK 6:29pm</h3>
-            <p class="card-text">
-              <div class = "row">
-                <div class = "col-2">
-                  <img src="static/images/logo_placeholder.jpg" alt="logo" class="img-thumbnail">
-                </div>
-                <div class = "col-6">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Airline: JetBlue Airways</li>
-                    <li class="list-group-item">Plane: Airbus A320</li>
-                    <li class="list-group-item">Flight Time: 6h 29m</li>
-                  </ul>
-                </div>
-                <div class = "col-4">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><b>Ticket Price: $105</b></li>
-                    <li class="list-group-item">CO2: 0.21 1000 lbs</li>
-                    <li class="list-group-item">Eco-Score: 8.44</li>
-                  </ul>
-                </div>
-              </div>
-            </p>
-            <a href="" class="btn btn-success">Purchase a ticket</a>
-            <a href="https://www.terrapass.com/product/productindividuals-families?weight_needed=0.21" class="btn btn-success">Offset your carbon</a>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMap" aria-expanded="false" aria-controls="collapseMap">
-              See transit options
-            </button>                  
-            </p>
-            <div class="collapse" id="collapseMap">
-              <div class="card card-body">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3222.6527430020606!2d-86.67955998549627!3d36.126316980092945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88646eab541f3d59%3A0xaaf78a5d943ea27b!2sBNA!5e0!3m2!1sen!2sus!4v1580855090339!5m2!1sen!2sus" 
-                width="930" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-            </div>
-          </div>
-          </div>
-          <br>
-          <br>
-          <!-- 2 -->
-        <div class="card">
-          <div class="card-body">
-            <h3 class="card-title">Delta BNA 11:34am - 
-              JFK 2:50pm</h3>
-            <p class="card-text">
-              <div class = "row">
-                <div class = "col-2">
-                  <img src="static/images/logo_placeholder.jpg" alt="logo" class="img-thumbnail">
-                </div>
-                <div class = "col-6">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Airline: Delta</li>
-                    <li class="list-group-item">Plane: Canadair Regional Jet 900</li>
-                    <li class="list-group-item">Flight Time: 2h 16m</li>
-                  </ul>
-                </div>
-                <div class = "col-4">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><b>Ticket Price: $109</b></li>
-                    <li class="list-group-item">CO2: 0.15 1000 lbs</li>
-                    <li class="list-group-item">Eco-Score: 8.32</li>
-                  </ul>
-                </div>
-              </div>
-            </p>
-            <a href="" class="btn btn-success">Purchase a ticket</a>
-            <a href="https://www.terrapass.com/product/productindividuals-families?weight_needed=0.21" class="btn btn-success">Offset your carbon</a>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMap" aria-expanded="false" aria-controls="collapseMap">
-              See transit options
-            </button>                  
-            </p>
-            <div class="collapse" id="collapseMap">
-              <div class="card card-body">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3222.6527430020606!2d-86.67955998549627!3d36.126316980092945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88646eab541f3d59%3A0xaaf78a5d943ea27b!2sBNA!5e0!3m2!1sen!2sus!4v1580855090339!5m2!1sen!2sus" 
-                width="930" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-            </div>
-          </div>
-          </div>
-          <br>
-          <br>
-          <!-- 3 -->
-        <div class="card">
-          <div class="card-body">
-            <h3 class="card-title">Delta BNA 6:07am - 
-              JFK 9:30am</h3>
-            <p class="card-text">
-              <div class = "row">
-                <div class = "col-2">
-                  <img src="static/images/logo_placeholder.jpg" alt="logo" class="img-thumbnail">
-                </div>
-                <div class = "col-6">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Airline: Delta</li>
-                    <li class="list-group-item">Plane: Canadair Regional Jet 900</li>
-                    <li class="list-group-item">Flight Time: 2h 23m</li>
-                  </ul>
-                </div>
-                <div class = "col-4">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><b>Ticket Price: $109</b></li>
-                    <li class="list-group-item">CO2: 0.15 1000 lbs</li>
-                    <li class="list-group-item">Eco-Score: 8.32</li>
-                  </ul>
-                </div>
-              </div>
-            </p>
-            <a href="" class="btn btn-success">Purchase a ticket</a>
-            <a href="https://www.terrapass.com/product/productindividuals-families?weight_needed=0.21" class="btn btn-success">Offset your carbon</a>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMap" aria-expanded="false" aria-controls="collapseMap">
-              See transit options
-            </button>                  
-            </p>
-            <div class="collapse" id="collapseMap">
-              <div class="card card-body">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3222.6527430020606!2d-86.67955998549627!3d36.126316980092945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88646eab541f3d59%3A0xaaf78a5d943ea27b!2sBNA!5e0!3m2!1sen!2sus!4v1580855090339!5m2!1sen!2sus" 
-                width="930" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-            </div>
-          </div>
-          </div>
-
-  
-
-
-        </div>
+          
+        
       </div>
     </div>
+  </div>
+</div>
   </section>
+{% else %}
 
+{% endif %}
 <!-- Site info & Tableau charts -->
   <section id="info" class="bg-dark text-white">
     <div class="container">
