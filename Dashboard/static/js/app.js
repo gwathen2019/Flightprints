@@ -92,7 +92,7 @@ function chart1(csv){
     });
   
   var yScale = d3.scaleLinear()
-  .domain([0,1])
+  .domain([0,.75])
   .range([chartHeight, 0]);
 
   var xScale = d3.scaleBand()
@@ -138,9 +138,9 @@ function chart1(csv){
   .classed("bar", true)
   .attr("id", "fix")
   .attr("width", d => barWidth)
-  .attr("height", d => (yScale(d.co2_mi_seat)))
+  .attr("height", d => (chartHeight - yScale(d.co2_mi_seat)))
   .attr("x", (d, i) => i * (barWidth + barSpacing))
-  .attr("y", d => chartHeight - yScale(d.co2_mi_seat));
+  .attr("y", d => yScale(d.co2_mi_seat));
 
   //console.log(ageData.age);
   
