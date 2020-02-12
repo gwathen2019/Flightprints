@@ -8,6 +8,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <title>Flightprints</title>
 
   <!-- Bootstrap core CSS -->
@@ -95,59 +97,83 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 mx-auto" id="results-here">
-        {{ info }}
+
 
 <!-- Results will generate here -->
         <!-- 1 -->
-        
+        {% for i in range(info.depart_airport| length) %}
         <div class="card">
           <div class="card-body">
-            <h3 class="card-title">{{ info.depart_airport[0]}} {{ info.depart_time[0] }} - 
-              {{ info.arrive_airport[0] }} {{ info.arrive_time[0] }}</h3>
+            <h3 class="card-title">{{ info.depart_airport[i]}} {{ info.depart_time[i] }} - 
+              {{ info.arrive_airport[i] }} {{ info.arrive_time[i] }}
+              
+              </h3>
+              
             <p class="card-text">
+              <script type="text/javascript">
+                var roundedScore = Math.floor({{ score.score[i] }});
+                var htmlstr = `<span style="font-size:100%;color:teal;"><i class="fa fa-star"></i></span>`;
+                var value = htmlstr.repeat(roundedScore);
+                if ({{ score.score[i] }} - roundedScore > .3) {
+                  value = value.concat(`<span style="font-size:100%;color:teal;"><i class="fa fa-star-half"></i></span>`);
+                }
+                console.log(roundedScore);
+                document.write(value);
+              
+              </script>
               <div class = "row">
                 <div class = "col-2">
                   <img src="static/images/logo_placeholder.jpg" alt="logo" class="img-thumbnail">
                 </div>
                 <div class = "col-6">
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item">Airline: {{ info.airline[0] }}</li>
-                    <li class="list-group-item">Plane: {{ info.model[0] }}</li>
-                    <li class="list-group-item">Flight Time: {{ info.duration[0] }}</li>
+                    <li class="list-group-item">Airline: {{ info.airline[i] }}</li>
+                    <li class="list-group-item">Plane: {{ info.model[i] }}</li>
+                    <li class="list-group-item">Flight Time: {{ info.duration[i] }}</li>
                   </ul>
                 </div>
                 <div class = "col-4">
                   <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><b>Ticket Price: {{ info.price[0] }}</b></li>
-                    <li class="list-group-item">CO2/Seat: {{ score.offset[0] }}lbs</li>
-                    <li class="list-group-item">Eco-Score: {{ score.score[0] }}</li>
+                    <li class="list-group-item"><b>Ticket Price: {{ info.price[i] }}</b></li>
+                    <li class="list-group-item">CO2/Seat: {{ score.offset[i] }}lbs</li>
+                    <li class="list-group-item">Eco-Score: {{ score.score[i] }}/10</li>
+            
                   </ul>
                 </div>
               </div>
             </p>
             <a href="" class="btn btn-success">Purchase a ticket</a>
-            <a href="https://www.terrapass.com/product/productindividuals-families?weight_needed={{ score.paid_offset[0] }}" class="btn btn-success">Offset your carbon</a>
+            <a href="https://www.terrapass.com/product/productindividuals-families?weight_needed={{ score.paid_offset[i] }}" class="btn btn-success">Offset your carbon</a>
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseMap" aria-expanded="false" aria-controls="collapseMap">
               See transit options
             </button>                  
             </p>
             <div class="collapse" id="collapseMap">
               <div class="card card-body">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3222.6527430020606!2d-86.67955998549627!3d36.126316980092945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88646eab541f3d59%3A0xaaf78a5d943ea27b!2s{{ info.depart_airport[0] }}!5e0!3m2!1sen!2sus!4v1580855090339!5m2!1sen!2sus" 
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3222.6527430020606!2d-86.67955998549627!3d36.126316980092945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88646eab541f3d59%3A0xaaf78a5d943ea27b!2s{{ info.depart_airport[i] }}!5e0!3m2!1sen!2sus!4v1580855090339!5m2!1sen!2sus" 
                 width="930" height="350" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
             </div>
           </div>
           </div>
           <br>
+          <br>
+          {% endfor %}
           
-        
       </div>
     </div>
   </div>
 </div>
   </section>
 {% else %}
+<section id="test" >
+<span style="font-size:300%;color:lightskyblue;"><i class="fa fa-star-half"></i></span>
+<span style="font-size:300%;color:lightskyblue;"><i class="fa fa-star"></i></span>
+<div>
+<div class="stars-outer">
+  <div class="stars-inner" onload="rating(8.4)"><script>rating(8.4);</script></div>
+</div></div>
 
+</section>
 {% endif %}
 <!-- Site info & Tableau charts -->
   <section id="info" class="bg-dark text-white">

@@ -1,4 +1,17 @@
 // GENERATE RESULTS //
+function stars(score){
+  var roundedScore = Math.floor(score);
+  var htmlstr = `<span style="font-size:300%;color:lightskyblue;"><i class="fa fa-star"></i></span>`;
+  var value = htmlstr.repeat(roundedScore);
+  if (score - roundedScore > .3) {
+    value = value.concat(`<span style="font-size:300%;color:lightskyblue;"><i class="fa fa-star-half"></i></span>`);
+  }
+  console.log(roundedScore);
+  d3.select("#test")
+  .html(value)
+}
+stars(8.4);
+//stars()
 
 // GENERATE CHARTS //
 
